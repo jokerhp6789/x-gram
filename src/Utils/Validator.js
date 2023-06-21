@@ -5,31 +5,33 @@ const translation = i18n.t
 export function validateUserName(value) {
   const regexSpecialString =
     /[!@#$%^&*()+\- =\[\]{};':"\\|,.<>\/?ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+/
-  if (value.trim().length === 0) {
-    return translation('authPage.errorRequireUserName')
-  } else if (value.trim().length < 6) {
-    return translation('authPage.errorRequireUserNameMin6')
-  } else if (value.trim().length >= 30) {
-    return translation('authPage.errorRequireUserNameMax30')
-  } else if (regexSpecialString.test(value.trim())) {
-    return translation('authPage.errorRequireUserNameNotContainSpecial')
-  } else {
-    return ''
-  }
+  //   if (value.trim().length === 0) {
+  //     return translation('authPage.errorRequireUserName')
+  //   } else if (value.trim().length < 6) {
+  //     return translation('authPage.errorRequireUserNameMin6')
+  //   } else if (value.trim().length >= 30) {
+  //     return translation('authPage.errorRequireUserNameMax30')
+  //   } else if (regexSpecialString.test(value.trim())) {
+  //     return translation('authPage.errorRequireUserNameNotContainSpecial')
+  //   } else {
+  //     return ''
+  //   }
+  return true
 }
 
 export function validatePassword(value) {
   const regexSpecialString =
     /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*()+=-?;,./{}|":<>[\]\\'-~_]{6,}$/
-  if (value.trim().length === 0) {
-    return translation('auth.password_empty')
-  } else if (value.trim().length < 6) {
-    return translation('auth.password_length_error')
-  } else if (!regexSpecialString.test(value.trim())) {
-    return translation('auth.password_format_error')
-  } else {
-    return ''
-  }
+  //   if (value.trim().length === 0) {
+  //     return translation('auth.password_empty')
+  //   } else if (value.trim().length < 6) {
+  //     return translation('auth.password_length_error')
+  //   } else if (!regexSpecialString.test(value.trim())) {
+  //     return translation('auth.password_format_error')
+  //   } else {
+  //     return ''
+  //   }
+  return false
 }
 
 export function validateUserOldPass(value, oldPass) {
@@ -69,13 +71,13 @@ export function validateUserPhone(value) {
 }
 
 export function validateEmail(value) {
-  if (value.length === 0) {
-    return translation('auth.email_empty')
-  }
-  const regExp = /^[+._\-\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-  if (!regExp.test(value)) {
-    return translation('auth.email_error')
-  }
+  //   if (value.length === 0) {
+  //     return translation('auth.email_empty')
+  //   }
+  //   const regExp = /^[+._\-\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+  //   if (!regExp.test(value)) {
+  //     return translation('auth.email_error')
+  //   }
   return ''
 }
 
